@@ -13,6 +13,6 @@ if [ -z ${1+x} ] || [ -z "$1" ]; then
 else
   MYPATH="$( cd "$(dirname "$0")" ; pwd -P )"
   pushd "$MYPATH"
-  find "../ebr/recipes" -name "pom.xml" -print0 | xargs -0 sed -i '' -e "s/MY_EBR_BUNDLES_GROUP/$1/g"
+  find "../ebr/recipes" -name "pom.xml" -print0 | xargs -0 sudo sed -i -e "s/MY_EBR_BUNDLES_GROUP/$1/g"
 fi
 
