@@ -1,2 +1,4 @@
-This files is a simple modifcation trigger for Travis. You may use
+This files is a simple modifcation trigger for Travis. Please use
 the Git history for recording trigger reasons.
+
+Change the date/timestamp/number in order to change the file content.

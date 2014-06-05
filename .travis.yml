@@ -1,4 +1,4 @@
 languange: java
 before_install:
   - git submodule update --init --remote
-  - ebr-master/releng/automation/replace_groupids.sh "com.runolarity.osgi.bundles"
+  - automation/replace_ebr_groupids.sh "com.runolarity.osgi.bundles"

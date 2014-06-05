@@ -1,3 +1,5 @@
-[submodule "ebr-master"]
-	path = ebr-master
+[submodule "ebr"]
+	path = ebr
 	url = git://git.eclipse.org/gitroot/ebr/org.eclipse.ebr.recipes.git
+  branch = master
+  ignore = dirty
