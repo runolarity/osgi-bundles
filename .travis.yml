@@ -5,7 +5,6 @@ before_install:
   - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
 
 install: 
-  - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install 
-  - mvn -f ebr/recipes/pom.xml install -DskipTests=true
+  - mvn -f ebr/pom.xml install -DskipTests=true
 
 script: true 
