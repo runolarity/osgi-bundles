@@ -1,4 +1,9 @@
 languange: java
+
 before_install:
   - git submodule update --init --remote
   - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
+
+install: mvn -f ebr/recipes/pom.xml install -DskipTests=true
+
+script: true 
