@@ -6,6 +6,6 @@ before_install:
 
 install: 
   - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install 
-  - mvn -f ebr/pom.xml install -DskipTests=true
+  - mvn -f ebr/pom.xml install -DskipTests=true -Djgit.dirtyWorkingTree=ignore
 
 script: true 
