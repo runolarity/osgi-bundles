@@ -1,6 +1,5 @@
 languange: java
 before_install:
-- git submodule update --init --remote
 - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
 install:
 - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install
