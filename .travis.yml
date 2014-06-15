@@ -1,11 +1,12 @@
 languange: java
-
 before_install:
-  - git submodule update --init --remote
-  - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
-
-install: 
-  - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install 
-  - mvn -f ebr/pom.xml install -DskipTests=true -Djgit.dirtyWorkingTree=ignore
-
-script: true 
+- git submodule update --init --remote
+- automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
+install:
+- mvn -f ebr/releng/ebr-maven-plugin/pom.xml install
+- mvn -f ebr/pom.xml deploy --settings .travis-maven-settings.xml -DskipTests=true -Djgit.dirtyWorkingTree=ignore -DaltDeploymentRepository=bintray-runolarity-maven-osgi-bundles::default::https://api.bintray.com/maven/runolarity/maven/osgi-bundles -DdeployAtEnd=true
+script: true
+env:
+  global:
+  - secure: V0N6Dt6eo2Bf8H+sWEqnzWT4kqW8qE0T5GdcdmUtTai+MUhRz/IMcFeGQ3P0SFv9ESwS8vNAyIxAgAb1bKAP3a+klpSWllx3UPxHwVvcBxrpYZssSJlC1W2EMDNyM1oDGRw2axg/R5A1xZEXFFid/tPZODZgEaS5N/urzkmKVXM=
+  - secure: bTAINqsHm6fiBB+HfXrtENDf5AsgnZtN/0bDQTsGvEHVyCIA/4RSHXmikOwi5NBRlC40SaxDH1KC5Cg0VR3azkJ+EaEc4iU7FGsUgBEgvTUjPXise1Bla5cInjasv2CAvNs5Yx1tLafzEeRZM9ttVwuRchcK4sQZE36W3xzmVuo=
