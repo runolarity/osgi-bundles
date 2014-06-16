@@ -3,7 +3,7 @@ before_install:
 - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
 install:
 - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install
-- mvn -f ebr/pom.xml deploy --settings .travis-maven-settings.xml -DskipTests=true -Djgit.dirtyWorkingTree=ignore -DaltDeploymentRepository=oss-jfrog-snapshots::default::http://oss.jfrog.org/artifactory/oss-snapshot-local -DdeployAtEnd=true
+- mvn deploy --settings .travis-maven-settings.xml -DskipTests=true -Djgit.dirtyWorkingTree=ignore -DaltDeploymentRepository=oss-jfrog-snapshots::default::http://oss.jfrog.org/artifactory/oss-snapshot-local -DdeployAtEnd=true
 script: true
 env:
   global:

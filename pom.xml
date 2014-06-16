@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.runolarity.osgi.bundles</groupId>
+  <artifactId>ebr-recipes-aggregation</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Runolarity OSGi Bundles :: Aggregation of Eclipse Bundle Recipes</name>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>oss-jfrog-snapshots</id>
+      <uniqueVersion>false</uniqueVersion>
+      <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <modules>
+    <module>ebr/recipes/apache-commons</module>
+    <module>ebr/recipes/apache-lucene-solr</module>
+    <module>ebr/recipes/google</module>
+    <module>ebr/recipes/hk2</module>
+    <module>ebr/recipes/javax</module>
+    <module>ebr/recipes/jersey</module>
+    <module>ebr/recipes/logback</module>
+    <module>ebr/recipes/slf4j</module>
+    <module>ebr/recipes/unsorted</module>
+  </modules>
+</project>
