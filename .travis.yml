@@ -1,4 +1,5 @@
 languange: java
+sudo: false
 
 before_install:
 - automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
