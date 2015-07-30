@@ -13,7 +13,7 @@ deploy:
   access_key_id: AKIAIXAT4M2U6R74C3DA
   secret_access_key:
     secure: bd6TedUn/Qb9huNX960yREuVjxuxM8DsdEkx1ZB/Lf1hZ3+Q2AcxwZFuZUMijj3wV9l5BH4wZdTv/B7B5RtGtBP0dOykWkw3BMXovqHgHH360scw+2O7sAc3M+55MfOt2Mg0KLE2Y7lEuDQb1hJ8Ux3jCzLkTudrv1D+ktc0pZE=
-  bucket: runolarity-public
+  bucket: public.runolarity.com
   local-dir: ebr/releng/p2/repository/target/repository
   upload-dir: repository
   acl: public_read
