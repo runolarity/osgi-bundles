@@ -17,5 +17,3 @@ deploy:
   local-dir: ebr/releng/p2/repository/target/repository
   upload-dir: repository
   acl: public_read
-  on:
-    repo: runolarity/osgi-bundles
