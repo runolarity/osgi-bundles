@@ -1,17 +1,21 @@
 languange: java
 sudo: false
 
-before_install:
-- automation/replace_ebr_groupids.sh com.runolarity.osgi.bundles
-
 install:
 - mvn -f ebr/releng/ebr-maven-plugin/pom.xml install
-- mvn deploy --settings .travis-maven-settings.xml -DskipTests=true -Djgit.dirtyWorkingTree=ignore -DaltDeploymentRepository=oss-jfrog-snapshots::default::http://oss.jfrog.org/artifactory/oss-snapshot-local -DdeployAtEnd=true
+- mvn -f ebr/recipes/pom.xml install
+- mvn -f ebr/releng/p2/repository/pom.xml package
 
 script: true
 
-env:
-  global:
-  - secure: V0N6Dt6eo2Bf8H+sWEqnzWT4kqW8qE0T5GdcdmUtTai+MUhRz/IMcFeGQ3P0SFv9ESwS8vNAyIxAgAb1bKAP3a+klpSWllx3UPxHwVvcBxrpYZssSJlC1W2EMDNyM1oDGRw2axg/R5A1xZEXFFid/tPZODZgEaS5N/urzkmKVXM=
-  - secure: bTAINqsHm6fiBB+HfXrtENDf5AsgnZtN/0bDQTsGvEHVyCIA/4RSHXmikOwi5NBRlC40SaxDH1KC5Cg0VR3azkJ+EaEc4iU7FGsUgBEgvTUjPXise1Bla5cInjasv2CAvNs5Yx1tLafzEeRZM9ttVwuRchcK4sQZE36W3xzmVuo=
-
+deploy:
+  provider: s3
+  access_key_id: AKIAIXAT4M2U6R74C3DA
+  secret_access_key:
+    secure: bd6TedUn/Qb9huNX960yREuVjxuxM8DsdEkx1ZB/Lf1hZ3+Q2AcxwZFuZUMijj3wV9l5BH4wZdTv/B7B5RtGtBP0dOykWkw3BMXovqHgHH360scw+2O7sAc3M+55MfOt2Mg0KLE2Y7lEuDQb1hJ8Ux3jCzLkTudrv1D+ktc0pZE=
+  bucket: runolarity-public
+  local-dir: ebr/releng/p2/repository/target/repository
+  upload-dir: repository
+  acl: public_read
+  on:
+    repo: runolarity/osgi-bundles
