@@ -16,4 +16,3 @@ deploy:
   bucket: public.runolarity.com
   local-dir: ebr/releng/p2/repository/target/repository
   upload-dir: repository
-  acl: public_read
