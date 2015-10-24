@@ -2,7 +2,7 @@ languange: java
 sudo: false
 
 install:
-- mvn -f ebr/releng/ebr-maven-plugin/pom.xml install
+- mvn -f ebr/releng/maven-plugins/pom.xml install
 - mvn -f ebr/recipes/pom.xml install
 - mvn -f ebr/releng/p2/pom.xml package
 
