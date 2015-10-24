@@ -1,6 +1,9 @@
 languange: java
 sudo: false
 
+jdk:
+- oraclejdk8
+
 install:
 - mvn -f ebr/releng/maven-plugins/pom.xml install
 - mvn -f ebr/recipes/pom.xml install
