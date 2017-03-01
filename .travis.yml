@@ -4,9 +4,8 @@ sudo: false
 jdk:
 - oraclejdk8
 
-# Use custom Maven settings
-#before_install:
-#- cp .travis-maven-settings.xml ~/.m2/settings.xml
+before_install:
+- cp .travis-maven-settings.xml ~/.m2/settings.xml
 
 install:
 - ./mvnw -f ebr/releng/maven-plugins/pom.xml install
