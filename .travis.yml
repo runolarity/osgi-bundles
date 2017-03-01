@@ -4,10 +4,13 @@ sudo: false
 jdk:
 - oraclejdk8
 
+before_install:
+- cp .travis-maven-settings.xml ~/.m2/settings.xml
+
 install:
-- ./mvnw -s .travis-maven-settings.xml -f ebr/releng/maven-plugins/pom.xml install
-- ./mvnw -s .travis-maven-settings.xml -f ebr/recipes/pom.xml install
-- ./mvnw -s .travis-maven-settings.xml -f ebr/releng/p2/pom.xml package
+- ./mvnw -f ebr/releng/maven-plugins/pom.xml install
+- ./mvnw -f ebr/recipes/pom.xml install
+- ./mvnw -f ebr/releng/p2/pom.xml package
 
 script: true
 
