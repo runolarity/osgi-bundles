@@ -1,4 +1,6 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<!-- disabled due to missing artifacts (probably not up to date)
   <mirrors>
     <mirror>
       <id>google-maven-central</id>
@@ -6,5 +8,5 @@
       <url>https://maven-central.storage.googleapis.com</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
-  </mirrors>
+  </mirrors>-->
 </settings>
