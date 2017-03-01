@@ -5,9 +5,9 @@ jdk:
 - oraclejdk8
 
 install:
-- ./mvnw -f ebr/releng/maven-plugins/pom.xml install
-- ./mvnw -f ebr/recipes/pom.xml install
-- ./mvnw -f ebr/releng/p2/pom.xml package
+- ./mvnw -s .travis-maven-settings.xml -f ebr/releng/maven-plugins/pom.xml install
+- ./mvnw -s .travis-maven-settings.xml -f ebr/recipes/pom.xml install
+- ./mvnw -s .travis-maven-settings.xml -f ebr/releng/p2/pom.xml package
 
 script: true
 

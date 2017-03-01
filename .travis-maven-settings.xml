@@ -6,4 +6,12 @@
       <password>${env.CI_DEPLOY_PASSWORD}</password>
     </server>
   </servers>
+  <mirrors>
+    <mirror>
+      <id>google-maven-central</id>
+      <name>Google Maven Central</name>
+      <url>https://maven-central.storage.googleapis.com</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
 </settings>
